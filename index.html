@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Expenses chart component</title>
+  <link rel="stylesheet" href="./css/css_reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -15,29 +17,60 @@
   </style>
 </head>
 <body>
-
-  My balance
-  $921.48
-
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <section class="balance-card">
+      <div class="balance-head">
+        <div>
+          <p>My balance</p>
+          <h2>$921.48</h2>
+        </div>
+        <img src="./images/logo.svg" alt="Site logo">
+      </div>
+      <div class="balance-chart-container">
+        <h2>Spending - Last 7 days</h2>
+          <div class="chart">
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">mon</p>
+            </div>
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">tue</p>
+            </div>
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">wed</p>
+            </div>
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">thu</p>
+            </div>
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">fri</p>
+            </div>
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">sat</p>
+            </div>
+            <div class="chart-col">
+              <div class="column"></div>
+              <p class="chart-label">sun</p>
+            </div>
+          </div>         
+        <div class="chart-footer">
+          <div class="chart-foot-left">
+            <p>Total this month</p>
+            <h1>$478.33</h1>
+          </div>
+          <chart-foot-right>
+            <p class="bold">+2.4%</p>
+            <p>from last month</p>
+          </chart-foot-right>
+        </div>
+    </div>
+    </section>
+  </main>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

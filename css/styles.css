@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+ 
+ *,
+ *::before,
+ *::after {
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    /* transition: all .5s ease-in-out; */
+ }
+
+ :root {
+  /* * -------------------------- PAGE COLORS ------------------------ */   
+
+    --clr-red: #EC755D;
+    --clr-cyan: #76B5BC;
+    --clr-dark-brown: #382314;
+    --clr-medium-brown: #92857A;
+    --clr-cream-bg: #FFFBF6;
+    --clr-card-white: #FFFBF6;
+    --clr-white: #FFF;
+
+ /* * -------------------------- MOBILE Font SIZES ------------------------ */
+    
+    --fs-700: 1.875rem;     /* 30px */
+    --fs-500: 1.5rem;       /* 24px */
+    --fs-400: .9375rem;     /* 15px */ 
+
+    --lh-700: 2.4375rem;    /* 39px */
+    --lh-500: 1.9375rem;    /* 31px */
+    --lh-400: 1.1875rem;    /* 19px */
+}
+
+
+/* * -------------------------- LAPTOP Font SIZES ------------------------ */
+
+@media screen and (min-width: 37.5em) {
+    :root {
+        --fs-700: 3rem;         /* 48px */
+        --fs-500: 2rem;         /* 32px */
+        --fs-400: 1.125rem;     /* 18px */
+
+        --lh-700: 3.875rem;     /* 62px */
+        --lh-500: 2.5625rem;    /* 41px */
+        --lh-500: 1.4375rem;    /* 23px */
+    }   
+}
+
+h1 {
+    font-size: var(--fs-700);
+    line-height: var(--lh-700);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--fs-500);
+    line-height: var(--lh-500);
+    font-weight: 700;
+}
+
+p {
+    font-size: var(--fs-400);
+    line-height: var(--lh-400);
+    font-weight: 400;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    width: 100vw;
+    min-width: 375px;
+    height: 100vh;
+}
+
+.balance-card {
+    width: calc(100% - 2rem);
+}
+
+/* * ===================== HEAD ================== */
+.balance-head {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--clr-red);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    color: white;
+    padding: 1.25rem 1.5rem 1.37rem 1.25rem;
+}
+
+
+
+
+/* * =================== CHART =================== */
+.balance-chart-container {
+    background-color: var(--clr-card-white);
+    border-radius: 10px;
+    padding: 1.5rem 1.25rem;
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: .75rem;
+    height: 200px;
+}
+
+.chart-col {
+    width: 100%;
+    min-width: 2.0625rem;
+}
+.column {
+    background-color: #EC755D;
+    height: 30px;
+    border-radius: 3px;
+    transition: height 1.5s ease-in-out;
+}
+
+.chart-label {
+    text-align: center;
+}
