@@ -1,23 +1,64 @@
 const chartCols = document.getElementsByClassName('column');
+const spendingTags = document.getElementsByClassName('spending-tag')
 console.log(chartCols);
+console.log(spendingTags);
+
+// * add event listeners to colums to display spending tag on mouseover and clear on leave
+
+for (let i = 0; i < chartCols.length; i++) {
+    chartCols[i].addEventListener('mouseover',function(){
+        spendingTags[i].classList.remove('tag-off');
+        spendingTags[i].classList.add('tag-on');
+    })
+    chartCols[i].addEventListener('mouseleave',function(){
+        spendingTags[i].classList.remove('tag-on');
+        spendingTags[i].classList.add('tag-off');
+    })
+}
+
+// * get data from .json file
 
 fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
-    chartCols[0].style.backgroundColor = 'blue';
-    console.log(chartCols[0].style.backgroundColor);
-    // chartCols[0].style.height = '50px';
-    console.log(data[0].amount);
-    console.log(`${data[0].amount}`);
-    chartCols[0].style.height = `${data[0].amount * 3}px`;
-    console.log(chartCols[0].style.height);
+    let maxSpending = data[0].amount;
+    let maxSpendingIndex = 0;
+    
+    // * find day with biggest spending
+    
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].amount > maxSpending) {
+            maxSpending = data[i].amount;
+            maxSpendingIndex = i;
+        } 
+    }
 
+    // * add class to biggest spending day so it displays blue
+    
+    chartCols[maxSpendingIndex].classList.add('column-blue');
+    
+    // * populate spending-tags with values
+    
+    for (let i = 0; i < spendingTags.length; i++) {
+        spendingTags[i].innerHTML =  `<p>$${data[i].amount}</p>`     
+    }
+
+    // * create columns based on spending ammount
+    
     for (let i = 0; i < chartCols.length; i++) {
         chartCols[i].style.height = `${data[i].amount * 3}px`;     
     }
-  });
+});
 
-//   chartCols[0].style.backgroundColor = 'green'
-//   console.log(chartCols[0].style.backgroundColor);
-// console.log('outside : ' + expenseData);  //undefinded ?
+
+// ! code below is working
+
+// chartCols[i].addEventListener('mouseover',function(){
+//     spendingTags[i].style.display = "block";
+//     spendingTags[i].style.backgroundColor = 'var(--clr-dark-brown)';
+// })
+// chartCols[i].addEventListener('mouseleave',function(){
+//     spendingTags[i].style.display = "none";
+//     spendingTags[i].style.backgroundColor = 'var(--clr-card-white)';
+// })
