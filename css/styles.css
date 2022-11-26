@@ -6,7 +6,6 @@
  *::after {
     box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
-    /* transition: all .5s ease-in-out; */
  }
 
  :root {
@@ -85,12 +84,21 @@ main {
     background-color: var(--clr-red);
     border-radius: 10px;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--clr-card-white);
     padding: 1.25rem 1.5rem 1.37rem 1.25rem;
 }
 
 .balance-head > div > p {
     margin-bottom: .25rem;
+}
+
+@media screen and (min-width: 37.5em) {
+    .balance-head{
+        padding: 1.625rem 2.375rem 1.875rem 2rem;
+    }
+    .balance-head > div > p {
+        margin-bottom: 1rem;
+    }
 }
 
 
@@ -100,6 +108,16 @@ main {
     background-color: var(--clr-card-white);
     border-radius: 10px;
     padding: 1.5rem 1.25rem;
+}
+
+@media screen and (min-width: 37.5em) {
+    .balance-chart-container {
+        padding: 2.5rem;
+    }
+
+    .balance-chart-container > h2 {
+        margin-bottom: 1rem;
+    }
 }
 
 .chart {
@@ -125,6 +143,12 @@ main {
 .spending-tag > p {
     font-size: 0.75rem;
     text-align: center;
+}
+
+@media screen and (min-width: 37.5em) {
+    .spending-tag > p {
+        font-size: 1.125rem;
+    }
 }
 
 .tag-on {
@@ -171,6 +195,13 @@ main {
     margin-block: .6875rem 1.5rem;
 }
 
+@media screen and (min-width: 37.5em) {
+    .chart-label {
+        font-size: .9375rem;
+        margin-block: .5rem 2rem;
+    }
+}
+
 /* * ---------------------- CHART FOOTER ----------------------- */
 
 .line {
@@ -198,6 +229,21 @@ main {
 
 .chart-foot-right:nth-child(2){
     color: #92857A;
+}
+
+@media screen and (min-width: 37.5em) {
+    .chart-footer {
+        margin-top: 2rem;
+
+    }
+    
+    .chart-foot-right {
+        margin-bottom: .5rem;
+    }
+
+    .bold {
+        margin-bottom: .25rem;
+    }
 }
 
 .bold {

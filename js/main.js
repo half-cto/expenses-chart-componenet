@@ -50,15 +50,3 @@ fetch("./data.json")
         chartCols[i].style.height = `${data[i].amount * 3}px`;     
     }
 });
-
-
-// ! code below is working
-
-// chartCols[i].addEventListener('mouseover',function(){
-//     spendingTags[i].style.display = "block";
-//     spendingTags[i].style.backgroundColor = 'var(--clr-dark-brown)';
-// })
-// chartCols[i].addEventListener('mouseleave',function(){
-//     spendingTags[i].style.display = "none";
-//     spendingTags[i].style.backgroundColor = 'var(--clr-card-white)';
-// })
