@@ -1,9 +1,9 @@
 const chartCols = document.getElementsByClassName('column');
 const spendingTags = document.getElementsByClassName('spending-tag')
-console.log(chartCols);
-console.log(spendingTags);
+const chartLabels = document.getElementsByClassName('chart-label')
 
-// * add event listeners to colums to display spending tag on mouseover and clear on leave
+
+// * add event listeners to columns to display spending tag on mouseover and clear on leave
 
 for (let i = 0; i < chartCols.length; i++) {
     chartCols[i].addEventListener('mouseover',function(){
@@ -21,7 +21,6 @@ for (let i = 0; i < chartCols.length; i++) {
 fetch("./data.json")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     let maxSpending = data[0].amount;
     let maxSpendingIndex = 0;
     
@@ -37,6 +36,11 @@ fetch("./data.json")
     // * add class to biggest spending day so it displays blue
     
     chartCols[maxSpendingIndex].classList.add('column-blue');
+    
+    // * populate chart-labels with values
+    for (let i = 0; i < chartLabels.length; i++) {
+        chartLabels[i].innerHTML = `${data[i].day}`;
+    }
     
     // * populate spending-tags with values
     
